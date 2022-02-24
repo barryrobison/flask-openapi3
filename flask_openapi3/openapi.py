@@ -559,6 +559,8 @@ class OpenAPI(Flask):
         self.tag_names = []
         self.api_name = doc_prefix
         self.api_doc_url = f"/{self.api_name}.json"
+        self.rapidoc_elements = None
+        self.rapidoc_properties = None
         if oauth_config:
             if not isinstance(oauth_config, OAuthConfig):
                 raise TypeError("`initOAuth` must be `OAuthConfig`")
@@ -611,7 +613,9 @@ class OpenAPI(Flask):
             endpoint='rapidoc',
             view_func=lambda: render_template(
                 "rapidoc.html",
-                api_doc_url=f'{self.api_name}.json'
+                api_doc_url=f'{self.api_name}.json',
+                rapidoc_elements=self.rapidoc_elements,
+                rapidoc_properties=self.rapidoc_properties,
             )
         )
         blueprint.add_url_rule(
