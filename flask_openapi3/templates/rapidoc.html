@@ -8,6 +8,6 @@
     <script src="static/js/rapidoc-min.js"></script>
 </head>
 <body>
-<rapi-doc spec-url='{{ api_doc_url }}' {{ rapidoc_properties }}>{{ rapidoc_elements }}</rapi-doc>
+<rapi-doc spec-url='{{ api_doc_url }}' {{ rapidoc_properties | safe }}>{{ rapidoc_elements | safe }}</rapi-doc>
 </body>
 </html>
