@@ -4,13 +4,13 @@
 
 from setuptools import setup, find_packages
 
-from flask_openapi3 import __version__
+# from flask_openapi3 import __version__
 
 long_description = open('README.md', 'r', encoding='utf-8').read()
 
 setup(
     name="flask-openapi3",
-    version=__version__,
+    version='1.0.1',
     url='https://github.com/luolingchun/flask-openapi3',
     description='Generate RESTful API and OpenAPI document for your Flask project.',
     long_description=long_description,
